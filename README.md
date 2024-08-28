@@ -1,7 +1,5 @@
 # OSGEM: Open Source Geo-spatial Energy Modeller
 
-conda env create -f -n osgem environment.yml
-
 # Scope
 
 This repository contains the source code of the Open Source Geo-spatial Energy Modeller (OSGEM), a hybrid modelling tool comprising of code from ([OSeMOSYS](http://www.osemosys.org/)), specifically from an OSeMOSYS-PuLP implementation by the [State_of_Goa](https://github.com/robertodawid/State_of_Goa)) repository, and ([OnSSET](http://www.onsset.org/)).
