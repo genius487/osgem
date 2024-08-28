@@ -6,6 +6,22 @@ This repository contains the source code of the Open Source Geo-spatial Energy M
 
 This model was applied to a country case of Burkina Faso and was created in conjuction with a Master's thesis by the author. Data for that case can be found in this repository and the thesis can be found here (link to be added upon thesis completion).
 
+## Input data
+
+This modeller requires three input files, one for OSeMOSYS modelling and two for OnSSET modelling. The following will describe the changes that were made in order to make OSGEM work as a hybrid model.
+
+### OSeMOSYS Input file
+
+The input data is a **.xlsx* file found in the default location of:
+```
+./model/OSeMOSYS_Input_Data/
+```
+The user is free to change the location of where the input is located. The input data contains all the parameters necessary to run the optimization. The documentation regarding the parameters is similar to that found in the original version [OSeMOSYS-GNU](https://osemosys.readthedocs.io/en/latest/) as refered to be the State_of_Goa implementation. Additional parameters are needed to calculate the LCOE from OSeMOSYS and are described in the [docs](https://github.com/genius487/osgem/blob/main/docs.rst).
+
+### OnSSET Input files
+
+To be written
+
 ## Installation
 
 OSGEM requires Python > 3.9 and a number of different packages, and can be installed by doing the following, assuming a fresh install of Anaconda. ([Miniconda](https://docs.anaconda.com/miniconda/) is the lightest distribution of Anaconda). At this end of this, you will have an environment in which to do your modelling. After opening an Anaconda prompt, run:
