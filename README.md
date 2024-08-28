@@ -27,5 +27,9 @@ cd model
 python osgem.py
 ```
 
+## Output and Visualization
+
+OSGEM yields results from the OSeMOSYS and OnSSET portions of code. The result files are of the same format in this modeller as they are in both tools. The OSeMOSYS results are outputted as a CSV or Excel file, from which a pivot table can be made of the results for subsequent table making and graphing. The OnSSET results are outputted as a series of CSV files where that data can be collected and transformed. The geo-spatial data can be plotted using QGIS (or Geopandas) for visualization. See relevant OSeMOSYS and OnSSET documentation for more.
+
 ## More Information
 More on how OSeMOSYS works can be found in the [OSeMOSYS ReadTheDocs](https://osemosys.readthedocs.io/en/latest/) and more on OnSSET can be found in the more [OnSSET ReadTheDocs](https://onsset.readthedocs.io/en/latest/) or in the [GEP-OnSSET documentation](https://github.com/global-electrification-platform/gep-onsset/tree/master/docs/source) on Github. More about the tool could be found in the associated thesis or I can be contacted at samonthompson@yahoo.com.
