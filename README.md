@@ -16,7 +16,7 @@ The input data is a **.xlsx* file found in the default location of:
 ```
 ./model/OSeMOSYS_Input_Data/
 ```
-The user is free to change the location of where the input is located. The input data contains all the parameters necessary to run the optimization. The documentation regarding the parameters is similar to that found in the original version [OSeMOSYS-GNU](https://osemosys.readthedocs.io/en/latest/) as refered to be the State_of_Goa implementation. Additional parameters are needed to calculate the LCOE from OSeMOSYS and are described in the [docs](https://github.com/genius487/osgem/blob/main/docs.rst).
+The user is free to change the location of where the input is located. The input data contains all the parameters necessary to run the optimization. The documentation regarding the parameters is similar to that found in the original version [OSeMOSYS-GNU](https://osemosys.readthedocs.io/en/latest/) as referred to in the State_of_Goa implementation. Additional parameters are needed to calculate the LCOE from OSeMOSYS in this modeller and are described in the [docs](https://github.com/genius487/osgem/blob/main/docs.rst).
 
 ### OnSSET Input files
 
