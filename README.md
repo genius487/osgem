@@ -12,7 +12,7 @@ OSGEM requires Python > 3.9 and a number of different packages, and can be insta
 
 ```
 conda install git
-git clone <insert .git link here>
+git clone https://github.com/genius487/osgem.git
 cd osgem
 conda env create -n osgem -f environment.yml
 ```
