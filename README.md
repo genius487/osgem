@@ -8,7 +8,7 @@ This model was applied to a country case of Burkina Faso and was created in conj
 
 ## Installation
 
-OSGEM requires Python > 3.9 and a number of different packages, and can be installed by doing the following, assuming a fresh install of Anaconda. ([Miniconda](https://docs.anaconda.com/miniconda/) is the lightest distribution of Anaconda). At this end of this, you will have an environment in which to do your modelling.
+OSGEM requires Python > 3.9 and a number of different packages, and can be installed by doing the following, assuming a fresh install of Anaconda. ([Miniconda](https://docs.anaconda.com/miniconda/) is the lightest distribution of Anaconda). At this end of this, you will have an environment in which to do your modelling. After opening an Anaconda prompt, run:
 
 ```
 conda install git
