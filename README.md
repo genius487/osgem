@@ -12,8 +12,9 @@ Within the ```model``` folder, there exists:
 - a folder for OSeMOSYS input files,
 - a folder for OnSSET input files,
 - a folder for OSeMOSYS output files,
-- a folder for OnSSET output files, and
-- a folder of scripts that make the modeller function
+- a folder for OnSSET output files,
+- a folder of scripts that make the modeller function, and
+- the main script from which to execute the modeller
 
 # Input data
 
