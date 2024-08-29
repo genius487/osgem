@@ -9,11 +9,11 @@ This model was applied to a country case of Burkina Faso and was created in conj
 # Structure
 
 Within the ```model``` folder, there exists:
-a folder for OSeMOSYS input files,
-a folder for OnSSET input files,
-a folder for OSeMOSYS output files,
-a folder for OnSSET output files, and
-a folder of scripts that make the modeller function
+- a folder for OSeMOSYS input files,
+- a folder for OnSSET input files,
+- a folder for OSeMOSYS output files,
+- a folder for OnSSET output files, and
+- a folder of scripts that make the modeller function
 
 # Input data
 
