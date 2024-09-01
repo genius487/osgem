@@ -79,7 +79,7 @@ def runOSGEM(onsset_demand=[]):
     onsset_summary_folder = "./OnSSET_Results/bau/"  # Name of SUMMARIES folder to save outputs
 
     specs_file = "burkina-specs-bau.xlsx"  # Name of the specs file
-    specs_file_calib = "burkina-specs-bau-calibrated.xlsx"  # Name of the specs file
+    specs_file_calib = "burkina-specs-bau-calibrated.xlsx"  # Name of the calibrated specs file
 
     gis_files = ["Burkina_Faso_IRENA_final.csv",
                  "Burkina_Faso_IRENA_final_2030.csv",
