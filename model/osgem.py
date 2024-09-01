@@ -220,9 +220,6 @@ def runOSGEM(onsset_demand=[]):
 
     onsset_cumulative_new_demand = list(np.cumsum(onsset_annual_new_demand))
 
-    # EXTRA: necessary for my models as capacity cannot grow in the first 3 years of the OSeMOSYS model
-    onsset_cumulative_new_demand[0:2] = [0, 0, 0]
-
     return 0, onsset_cumulative_new_demand #kWh
 
 
@@ -238,6 +235,9 @@ if __name__ == "__main__":
         loop += 1
         print(f"RUN {loop}")
         is_optimized, onsset_new_resid_demand_new = runOSGEM(onsset_new_resid_demand_old)
+
+        # EXTRA: necessary for my models as capacity cannot grow in the first 3 years of the OSeMOSYS model
+        onsset_new_resid_demand_new[0:2] = [0, 0, 0]
 
         if is_optimized == 1:
             run_model = False
