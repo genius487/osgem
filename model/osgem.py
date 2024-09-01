@@ -93,12 +93,6 @@ def runOSGEM(onsset_demand=[]):
                        "Burkina_Faso_IRENA_final_2050_calibrated.csv",
                        "Burkina_Faso_IRENA_final_2060_calibrated.csv"]  # Names of calibrated GIS files
 
-    specs_path = onsset_input_folder + specs_file
-    specs_path_calib = onsset_input_folder + specs_file_calib
-
-    gis_files_path = [onsset_input_folder + name for name in gis_files]
-    gis_files_calib_path = [onsset_input_folder + name for name in gis_files_calib]
-
     # ----------------------------------------------------------------------------------------------------------------------
     #	OSeMOSYS SETUP - DATA SOURCES and MONTE CARLO SIMULATION
     # ----------------------------------------------------------------------------------------------------------------------
@@ -170,6 +164,12 @@ def runOSGEM(onsset_demand=[]):
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)
+
+    specs_path = onsset_input_folder + specs_file
+    specs_path_calib = onsset_input_folder + specs_file_calib
+
+    gis_files_path = [onsset_input_folder + name for name in gis_files]
+    gis_files_calib_path = [onsset_input_folder + name for name in gis_files_calib]
 
     # Insert/Update LCOEs into OnSSET from OSeMOSYS
 
