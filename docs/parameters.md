@@ -1,4 +1,4 @@
-# Documentation
+# Parameters
 
 This documentation provides explanations for additional parameters added in OSGEM to create a functioning model only. For explanation of the other parameters, please see the ReadTheDocs links referred to in the README.
 
