@@ -17,14 +17,14 @@ def visualize(boundary_file, results_csv, end_year, output_folder, fig_title):
 	res_gdf_dict = {}
 
 	code_colors = {1: 'tab:cyan',
-				   2: 'tab:orange',
-				   3: 'tab:green',
-				   4: 'tab:red',
-				   5: 'mediumorchid',
-				   6: 'tan',
-				   7: 'tab:pink',
-				   8: 'tab:olive',
-				   99: 'tab:gray'}
+		       2: 'tab:orange',
+		       3: 'tab:green',
+		       4: 'tab:red',
+		       5: 'mediumorchid',
+		       6: 'tan',
+		       7: 'tab:pink',
+		       8: 'tab:olive',
+		       99: 'tab:gray'}
 
 	# Separate that selection by Code (1-8,99)
 	
@@ -83,18 +83,18 @@ boundary_file_path = "./utils/visual_files/bf_admin0_hno_2022.shp"
 
 results_folder_path = "./OnSSET_Output/bau/"
 results_csv = ["BFA-1-0_0_0_0_0_0_2021-2030.csv",
-			   "BFA-1-1_1_1_1_1_1_2030-2040.csv",
-			   "BFA-1-2_2_2_2_2_2_2040-2050.csv",
-			   "BFA-1-3_3_3_3_3_3_2050-2060.csv",
-			   "BFA-1-4_4_4_4_4_4_2060-2070.csv"
-			   ]
+	       "BFA-1-1_1_1_1_1_1_2030-2040.csv",
+	       "BFA-1-2_2_2_2_2_2_2040-2050.csv",
+	       "BFA-1-3_3_3_3_3_3_2050-2060.csv",
+	       "BFA-1-4_4_4_4_4_4_2060-2070.csv"
+	       ]
 
 map_folder = "./Maps_Output/"
 figure_title = ["BAU 2030",
-				"BAU 2040",
-				"BAU 2050",
-				"BAU 2060",
-				"BAU 2070"]
+		"BAU 2040",
+		"BAU 2050",
+		"BAU 2060",
+		"BAU 2070"]
 
 year = [2030,2040,2050,2060,2070]
 
