@@ -17,6 +17,11 @@ Within the ```model``` folder, there exists:
 - the main script from which to execute the modeller
 - a script for visualizing the geo-spatial results
 
+Within the ```docs``` folder, there exists explanations for:
+- the modeller's parameters,
+- guidance of visualization,
+- the changes made in the creation of this modeller from the original source codes
+
 ## Input data
 
 This modeller requires three input files, one for OSeMOSYS modelling and two for OnSSET modelling. The following will describe the changes that were made in order to make OSGEM work as a hybrid model.
