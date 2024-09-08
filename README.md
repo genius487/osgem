@@ -19,7 +19,7 @@ Within the ```model``` folder, there exists:
 
 Within the ```docs``` folder, there exists explanations for:
 - the modeller's parameters,
-- guidance of visualization,
+- guidance on visualization,
 - the changes made in the creation of this modeller from the original source codes
 
 ## Input data
