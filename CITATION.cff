@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: 'OSGEM: Open Source Geo-spatial Energy Modeller'
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Samuel Samón
+    family-names: Thompson
+    email: samonthompson@yahoo.com
+abstract: >-
+  This repository contains the source code of the Open
+  Source Geo-spatial Energy Modeller (OSGEM), a hybrid
+  modelling tool comprising of code from OSeMOSYS,
+  specifically from an OSeMOSYS-PuLP implementation by the
+  State_of_Goa repository, and (OnSSET). This model was
+  applied to a country case of Burkina Faso and was created
+  in conjuction with a Master's thesis by the author. Data
+  for that case can be found in this repository and the
+  thesis can be found here (link to be added upon thesis
+  completion).
+keywords:
+  - OSGEM
+  - OSeMOSYS
+  - OnSSET
+  - energy system modelling
+  - rural electrification
+  - electricity planning
+  - optimization
+license: GPL-3.0
