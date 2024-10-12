@@ -11,6 +11,7 @@ authors:
   - given-names: Samuel Samón
     family-names: Thompson
     email: samonthompson@yahoo.com
+repository-code: 'https://github.com/genius487/osgem/'
 abstract: >-
   This repository contains the source code of the Open
   Source Geo-spatial Energy Modeller (OSGEM), a hybrid
