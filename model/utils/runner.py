@@ -113,7 +113,7 @@ def calibration(specs_path, csv_path, specs_path_calib, calibrated_csv_path, sce
     # RUN_PARAM: Here the calibrated "specs" data are copied to a new tab called "SpecsDataCalib". 
     # This is what will later on be used to feed the model
     specs_data.to_excel(writer, sheet_name='SpecsDataCalib', index=False)
-    writer.save()
+    #writer.save()
     writer.close()
 
     logging.info('Calibration finished. Results are transferred to the csv file \n')
@@ -184,7 +184,11 @@ def scenario(specs_path, calibrated_csv_path, results_folder, summary_folder, sc
     mgpv_om_cost_index = scenario_info.iloc[scen]['MGPV_OM_costs']
     mgpv_tech_life_index = scenario_info.iloc[scen]['MGPV_technical_life']
     sapv_base_to_peak_index = scenario_info.iloc[scen]['SAPV_base_to_peak_load_ratio']
-    sapv_cap_cost_index = scenario_info.iloc[scen]['SAPV_capital_cost']
+    sapv_cap_cost_inf_index = scenario_info.iloc[scen]['SAPV_capital_cost_Inf']
+    sapv_cap_cost_1kw_index = scenario_info.iloc[scen]['SAPV_capital_cost_1kW']
+    sapv_cap_cost_100w_index = scenario_info.iloc[scen]['SAPV_capital_cost_100W']
+    sapv_cap_cost_50w_index = scenario_info.iloc[scen]['SAPV_capital_cost_50W']
+    sapv_cap_cost_20w_index = scenario_info.iloc[scen]['SAPV_capital_cost_20W']
     sapv_om_cost_index = scenario_info.iloc[scen]['SAPV_OM_costs']
     sapv_tech_life_index = scenario_info.iloc[scen]['SAPV_technical_life']
     mgdiesel_om_td_index = scenario_info.iloc[scen]['MGDiesel_OM_TDLines']
@@ -249,7 +253,11 @@ def scenario(specs_path, calibrated_csv_path, results_folder, summary_folder, sc
     mgpv_om_costs = scenario_parameters.iloc[mgpv_om_cost_index]['MGPVOMCosts']
     mgpv_tech_life = scenario_parameters.iloc[mgpv_tech_life_index]['MGPVTechnicalLife']
     sapv_base_to_peak = scenario_parameters.iloc[sapv_base_to_peak_index]['SAPVBaseToPeakLoadRatio']
-    sapv_cap_cost = scenario_parameters.iloc[sapv_cap_cost_index]['SAPVCapitalCost']
+    sapv_cap_cost_inf = scenario_parameters.iloc[sapv_cap_cost_inf_index]['SAPVCapitalCostInf']
+    sapv_cap_cost_1kw = scenario_parameters.iloc[sapv_cap_cost_1kw_index]['SAPVCapitalCost1kW']
+    sapv_cap_cost_100w = scenario_parameters.iloc[sapv_cap_cost_100w_index]['SAPVCapitalCost100W']
+    sapv_cap_cost_50w = scenario_parameters.iloc[sapv_cap_cost_50w_index]['SAPVCapitalCost50W']
+    sapv_cap_cost_20w = scenario_parameters.iloc[sapv_cap_cost_20w_index]['SAPVCapitalCost20W']
     sapv_om_costs = scenario_parameters.iloc[sapv_om_cost_index]['SAPVOMCosts']
     sapv_tech_life = scenario_parameters.iloc[sapv_tech_life_index]['SAPVTechnicalLife']
     mgdiesel_om_td_lines = scenario_parameters.iloc[mgdiesel_om_td_index]['MGDieselOMofTDLines']
@@ -300,12 +308,12 @@ def scenario(specs_path, calibrated_csv_path, results_folder, summary_folder, sc
                                   discount_rate=disc_rate)
 
     grid_calc = Technology(om_of_td_lines=grid_om_td_lines,
-                           distribution_losses=float(specs_data.iloc[0][SPE_GRID_LOSSES]),
+                           distribution_losses=float(specs_data.iloc[scen][SPE_GRID_LOSSES]),
                            connection_cost_per_hh=grid_cxn_cost_per_HH,
                            base_to_peak_load_ratio=grid_base_to_peak,
                            capacity_factor=grid_cap_fac,
                            tech_life=grid_tech_life,
-                           grid_capacity_investment=float(specs_data.iloc[0][SPE_GRID_CAPACITY_INVESTMENT]),
+                           grid_capacity_investment=float(specs_data.iloc[scen][SPE_GRID_CAPACITY_INVESTMENT]),
                            grid_penalty_ratio=grid_pnlty_ratio,
                            grid_price=grid_price)
 
@@ -340,7 +348,12 @@ def scenario(specs_path, calibrated_csv_path, results_folder, summary_folder, sc
     sa_pv_calc = Technology(base_to_peak_load_ratio=sapv_base_to_peak,
                             tech_life=sapv_tech_life,
                             om_costs=sapv_om_costs,
-                            capital_cost={float("inf"): sapv_cap_cost * pv_capital_cost_adjust},
+                            capital_cost={float("inf"): sapv_cap_cost_inf * pv_capital_cost_adjust,
+                                          1: sapv_cap_cost_1kw * pv_capital_cost_adjust,
+                                          0.100: sapv_cap_cost_100w * pv_capital_cost_adjust,
+                                          0.050: sapv_cap_cost_50w * pv_capital_cost_adjust,
+                                          0.020: sapv_cap_cost_20w * pv_capital_cost_adjust
+                                          },
                             standalone=True)
 
     mg_diesel_calc = Technology(om_of_td_lines=mgdiesel_om_td_lines,
@@ -519,9 +532,6 @@ def update(results_df, scen, specs_path_orig, analysis_years, csv_path):
 
     urban_pop_ratio_future = urban_pop_end_year/total_pop_end_year
 
-    print(total_elec_pop_end_year)
-    print(total_pop_end_year)
-
     specs_data["ElecActual"][scen + 1] = total_elec_pop_end_year / total_pop_end_year
     specs_data["Urban_elec_ratio"][scen + 1] = urban_elec_pop_end_year / urban_pop_end_year
     specs_data["Rural_elec_ratio"][scen + 1] = rural_elec_pop_end_year / rural_pop_end_year
@@ -531,17 +541,13 @@ def update(results_df, scen, specs_path_orig, analysis_years, csv_path):
 
     #specs_data["PopStartYear"][scen + 1] = results_df[pop_end_year].sum()
 
-    print(urban_elec_pop_end_year / urban_pop_end_year)
-    print(rural_elec_pop_end_year / rural_pop_end_year)
-    print(total_elec_pop_end_year / total_pop_end_year)
-
     book = load_workbook(specs_path_orig)
     writer = pd.ExcelWriter(specs_path_orig, engine='openpyxl')
     writer.book = book
     std = book.get_sheet_by_name('SpecsData')
     book.remove_sheet(std)
     specs_data.to_excel(writer, sheet_name='SpecsData', index=False)
-    writer.save()
+    #writer.save()
     writer.close()
 
     # Collect new demand from OnSSET

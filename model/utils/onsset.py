@@ -988,9 +988,6 @@ class SettlementProcessor:
 
         self.df[SET_POP + "{}".format(start_year)] = self.df.apply(lambda row: row[SET_POP_CALIB], axis=1)
 
-        print(self.df[SET_POP + "{}".format(start_year)].sum())
-        print(self.df[SET_POP + "{}".format(years_of_analysis[-2])].sum())
-        print(self.df[SET_POP + "{}".format(years_of_analysis[-1])].sum())
 
     def calibrate_elec_current(self, elec_actual, elec_actual_urban, elec_actual_rural, start_year, scen, min_night_lights=0,
                                min_pop=50, max_transformer_dist=2, max_mv_dist=2, max_hv_dist=5, buffer=True):
