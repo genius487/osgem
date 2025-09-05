@@ -58,7 +58,7 @@ def runOSGEM(onsset_demand=[]):
     ########################################################
 
     # OSeMOSYS
-    arg_input = "aug13-bfa-pulp-bau.xlsx"
+    arg_input = "bfa-pulp-bau.xlsx"
     arg_solver = "cbc"
     arg_output = "csv"
     arg_input_dir_osemosys = "OSeMOSYS_Input_Data"
@@ -75,8 +75,8 @@ def runOSGEM(onsset_demand=[]):
 
     # OnSSET
     onsset_input_folder = "./OnSSET_Input/bau/"
-    onsset_results_folder = "./OnSSET_Results/bau/"  # Name of RESULTS folder to save outputs
-    onsset_summary_folder = "./OnSSET_Results/bau/"  # Name of SUMMARIES folder to save outputs
+    onsset_results_folder = "./OnSSET_Output/bau/"  # Name of RESULTS folder to save outputs
+    onsset_summary_folder = "./OnSSET_Output/bau/"  # Name of SUMMARIES folder to save outputs
 
     specs_file = "burkina-specs-bau.xlsx"  # Name of the specs file
     specs_file_calib = "burkina-specs-bau-calibrated.xlsx"  # Name of the calibrated specs file
@@ -195,17 +195,17 @@ def runOSGEM(onsset_demand=[]):
         std = book.get_sheet_by_name('ScenarioParameters')
         book.remove_sheet(std)
         scenario_parameters.to_excel(writer, sheet_name='ScenarioParameters', index=False)
-        writer.save()
+        #writer.save()
         writer.close()
 
     # Initialize list for new residential demand from OnSSET
 
     onsset_annual_new_demand = []
 
-    # Perform Analysis for each decade
+    # Perform Analysis for each period
 
     for scen in range(len(lcoe_end_years)):
-        print(lcoe_end_years[scen])
+        print('\n Analyzing the period ending in {}'.format(lcoe_end_years[scen]))
 
         # Perform calibration
 
@@ -233,7 +233,7 @@ if __name__ == "__main__":
 
     while run_model:
         loop += 1
-        print(f"RUN {loop}")
+        print(f"\n ITERATION {loop}")
         is_optimized, onsset_new_resid_demand_new = runOSGEM(onsset_new_resid_demand_old)
 
         # EXTRA: necessary for my models as capacity cannot grow in the first 3 years of the OSeMOSYS model
