@@ -4,7 +4,7 @@
 
 This repository contains the source code of the Open Source Geo-spatial Energy Modeller (OSGEM), a hybrid modelling tool comprising of code from ([OSeMOSYS](http://www.osemosys.org/)), specifically from an OSeMOSYS-PuLP implementation by the [State_of_Goa](https://github.com/robertodawid/State_of_Goa)) repository, and ([OnSSET](http://www.onsset.org/)).
 
-This model was applied to a country case of Burkina Faso and was created in conjuction with a Master's thesis by the author. Data for that case can be found in this repository and the thesis can be found here (link to be added upon thesis completion).
+This model was applied to a country case of Burkina Faso and was created in conjuction with a Master's thesis by the author. Data for that case can be found in this repository and the thesis can be found ([here](https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A2012309&dswid=-343)).
 
 ## Structure
 
